@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Ana renkler */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary: #64748b;
+
+  /* Arkaplan renkleri */
+  --background: #ffffff;
+  --background-secondary: #f8fafc;
+  --sidebar-bg: #ffffff;
+
+  /* Metin renkleri */
+  --foreground: #0f172a;
+  --foreground-secondary: #475569;
+
+  /* Accent renkler */
+  --accent-1: #22c55e; /* Başarı/Ziyaret edildi */
+  --accent-2: #eab308; /* Planlanan */
+
+  /* Border ve gölge */
+  --border: #e2e8f0;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  --shadow-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --background-secondary: #1e293b;
+    --sidebar-bg: #1e293b;
+    --foreground: #f8fafc;
+    --foreground-secondary: #cbd5e1;
+    --border: #334155;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 3px;
+}
+
+.location-card-hover {
+  @apply transition-all duration-200 hover:ring-2 hover:ring-primary hover:ring-offset-2 dark:hover:ring-offset-background-secondary;
+}
+
+.input-focus {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+}
